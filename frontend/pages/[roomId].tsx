@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, JSX } from 'react';
 import { useRouter } from 'next/router';
 import { io, Socket } from 'socket.io-client';
 import Head from 'next/head';
@@ -18,7 +18,7 @@ interface GameState {
 
 const SOCKET_URL = process.env.NEXT_PUBLIC_SOCKET_URL || 'https://ludo-backend-vzpd.onrender.com/';
 
-export default function RoomPage() {
+export default function RoomPage(): JSX.Element {
   const router = useRouter();
   const { roomId, name, action } = router.query;
   const [socket, setSocket] = useState<Socket | null>(null);
