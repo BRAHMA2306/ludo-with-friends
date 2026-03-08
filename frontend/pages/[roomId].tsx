@@ -35,7 +35,11 @@ export default function RoomPage() {
     }
 
     const newSocket = io("https://ludo-backend-vzpd.onrender.com", {
-  transports: ["websocket"]});
+  transports: ["websocket"],
+  reconnection: true,
+  reconnectionAttempts: 5,
+  reconnectionDelay: 2000
+});
     setSocket(newSocket); // eslint-disable-line react-hooks/exhaustive-deps
 
     newSocket.on('connect', () => {
