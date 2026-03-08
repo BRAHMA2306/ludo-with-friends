@@ -13,8 +13,14 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: '*',
-    methods: ['GET', 'POST']
-  }
+    methods: ['GET', 'POST'],
+    credentials: true
+  },
+  transports: ["websocket", "polling"]
+});
+
+io.engine.on("connection_error", (err) => {
+  console.log("Socket connection error:", err);
 });
 
 app.get('/', (req, res) => {

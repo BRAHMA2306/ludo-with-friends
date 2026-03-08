@@ -39,7 +39,8 @@ export default function RoomPage() {
   transports: ["polling", "websocket"],
   reconnection: true,
   reconnectionAttempts: 5,
-  reconnectionDelay: 2000
+  reconnectionDelay: 2000,
+  withCredentials: true
 });
     setSocket(newSocket); // eslint-disable-line react-hooks/exhaustive-deps
 
