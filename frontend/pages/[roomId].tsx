@@ -34,8 +34,7 @@ export default function RoomPage() {
       return;
     }
 
-    const newSocket = io("https://ludo-backend-vzpd.onrender.com", {
-  transports: ["websocket"],
+    const newSocket = io("https://ludo-backend-vzpd.onrender.com"),
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 2000
