@@ -28,12 +28,6 @@ export default function RoomPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
-    if (!router.isReady) return;
-    if (!roomId || !name || !action) {
-      router.push('/');
-      return;
-    }
-
     const newSocket = io("https://ludo-backend-vzpd.onrender.com", {
   path: "/socket.io",
   transports: ["polling", "websocket"],
