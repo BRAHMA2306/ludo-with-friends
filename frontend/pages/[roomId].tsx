@@ -16,7 +16,7 @@ interface GameState {
   status: 'lobby' | 'playing' | 'finished'; winnerRanks: string[]; lastDiceRollTime: number; canRoll: boolean; sixCount: number; chat: ChatMessage[];
 }
 
-const SOCKET_URL = process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:4000';
+const SOCKET_URL = process.env.NEXT_PUBLIC_SOCKET_URL || 'https://ludo-backend-vzpd.onrender.com/';
 
 export default function RoomPage() {
   const router = useRouter();
@@ -34,7 +34,8 @@ export default function RoomPage() {
       return;
     }
 
-    const newSocket = io(SOCKET_URL);
+    const newSocket = io("https://ludo-backend-vzpd.onrender.com", {
+  transports: ["websocket"]});
     setSocket(newSocket); // eslint-disable-line react-hooks/exhaustive-deps
 
     newSocket.on('connect', () => {

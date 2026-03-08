@@ -42,7 +42,7 @@ A real-time multiplayer Ludo game built with a modern web stack. Players can cre
    cd backend
    node server.js
    \`\`\`
-   The server will run on \`http://localhost:4000\`.
+   The server will run on \`https://ludo-backend-vzpd.onrender.com/\`.
 
 3. **Install dependencies for Frontend:**
    \`\`\`bash
@@ -67,7 +67,7 @@ REDIS_URL=redis://127.0.0.1:6379
 
 In the \`frontend\` folder, you can configure:
 \`\`\`env
-NEXT_PUBLIC_SOCKET_URL=http://localhost:4000
+NEXT_PUBLIC_SOCKET_URL=https://ludo-backend-vzpd.onrender.com/
 \`\`\`
 
 ## Deployment Instructions
